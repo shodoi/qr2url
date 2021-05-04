@@ -1,0 +1,16 @@
+{
+  "name": "qr2url",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "jsqr": "^1.4.0",
+    "html2canvas": "^1.0.0-rc.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+		<title>JavaScriptで撮るスクリーンショット</title>
+	</head>
+	<body>
+		<img id="target" src="qr.png" alt="" loading="lazy">
+		<div class="btn btn-primary" onclick="downloadImage()">DL</div>
+		<div id="canvas"></div>
+		<a id="download"></a>
+		<script src="node_modules/html2canvas/dist/html2canvas.min.js"></script>
+		<script src="node_modules/jsqr/dist/jsQR.js"></script>
+		<script>
+			document.downloadImage = () => {
+				const qrElement = document.querySelector("#target");
+				const canvasElement = document.querySelector('#canvas');
+				const linkElement = document.querySelector("#download");
+				// console.log(code);
+				html2canvas(qrElement).then(canvas => {
+					const ctx = canvas.getContext('2d');
+					const image_data = ctx.getImageData(0, 0, canvas.width, canvas.height);
+					const code = jsQR(image_data.data, canvas.width, canvas.height);
+					console.log(code);
+					// console.log(canvas);
+					// const png = canvas.toDataURL('image/png');
+					// console.log(png);
+					// const code = jsQR(png, 100, 100);
+					// console.log(jsQR);
+
+					// canvasElement.src = canvas.toDataURL();
+					// linkElement.href = canvas.toDataURL('image/png');
+					// linkElement.download = 'hoge.png';
+					// linkElement.click();
+				});
+			}
+		</script>
+
+	</body>
+</html>
