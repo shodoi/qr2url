@@ -35,18 +35,14 @@
 			<canvas id="canvas2"></canvas>
 		</div>
 		<div id="url">
-			<span id="urltext"></span>
 		</div>
 		<script src="node_modules/html2canvas/dist/html2canvas.min.js"></script>
 		<script src="node_modules/jsqr/dist/jsQR.js"></script>
 		<script>
-			const btn = document.getElementById('button');
 			const canvasWrap = document.querySelector('#wrapper');
 			const canvasElement = document.querySelector('#canvas');
 			const canvasElement2 = document.querySelector('#canvas2');
-			const linkElement = document.querySelector("#download");
 			const urlEmement = document.querySelector("#url");
-			const urlTextEmement = document.querySelector("#urltext");
 
 			// canvasサイズ設定
 			const setCanvasSize = () => {
